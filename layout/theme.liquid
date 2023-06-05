@@ -117,27 +117,26 @@
   </head>
 
   <body class="grid min-h-full grid-cols-[100%] grid-rows-[auto_1fr_auto] font-body font-body-weight">
-    <a href="#MainContent" class="button sr-only bg-primary text-contrast focus:not-sr-only focus:absolute focus:z-50 focus:py-3 focus:px-6">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
+    {% comment %} <a href="#MainContent" class="button sr-only bg-primary text-contrast focus:not-sr-only focus:absolute focus:z-50 focus:py-3 focus:px-6">
+    {{ 'accessibility.skip_to_text' | t }}
+    </a> {% endcomment %}
 
-    {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%}
+    {% comment %} {%- if settings.cart_type == 'drawer' -%}
+    {%- render 'cart-drawer' -%}
+    {%- endif -%} {% endcomment %}
 
     {% comment %} {% section 'header' %} {% endcomment %}
-    <main
+      <main
       role="main"
       id="MainContent"
-      tabindex="-1">
-      {{ content_for_layout }}
+      tabindex="-1"> {{ content_for_layout }}
     </main>
 
     {% comment %} {% section 'footer' %} {% endcomment %}
-
+    {% comment %} 
     <ul hidden>
-      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-    </ul>
+    <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    </ul> {% endcomment %}
 
     <script>
       window.routes = {

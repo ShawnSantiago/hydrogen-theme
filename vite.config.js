@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [shopify(),vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      'vue@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
